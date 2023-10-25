@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static  %}
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        {% for i in movie_list %}
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{ i.img.url }}" alt="Card image cap" height="150px;">
+                <div class="card-body">
+                    <center><h4 class="card-title">{{ i.name }}</h4></center>
+                    <p class="card-text">{{ i.desc }}</p>
+                    <center><a href="{% url 'app1:detail' i.id %}" class="btn btn-danger">Explore More</a></center>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+
+
+
+<!--adminl kodthad index pagel show cheyyan-->
+<!--{% for i in movie_list %}-->
+
+<!--<h2>{{ i.id }}.{{ i.name }}</h2>-->
+<!--<h4><p>{{ i.desc }}</p></h4>-->
+<!--<h4>Released :{{ i.year }}</h4>-->
+<!--<br>-->
+<!--{% endfor %}-->
